@@ -14,8 +14,8 @@ import reducers from './reducers/index';
 import Layout from './containers/Layout';
 import MainPage from './containers/MainPage';
 import JogsPage from './containers/JogsPage';
-import InfoPage from './containers/InfoPage';
-import ContactPage from './containers/ContactPage';
+import InfoPage from './components/InfoPage';
+import ContactPage from './components/ContactPage';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
