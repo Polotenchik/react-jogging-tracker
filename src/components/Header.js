@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NavBar from './NavBar'; 
 
 class Header extends React.Component{
     render () {
@@ -6,7 +7,7 @@ class Header extends React.Component{
             <div>
                 <div className="col-12">
                     <div className="row">
-                        Menu
+                        <NavBar />
                     </div> 
                 </div>
             </div>

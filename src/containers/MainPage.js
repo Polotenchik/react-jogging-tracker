@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { fetchToken } from '../action';
 
 class MainPage extends React.Component {
 
@@ -9,11 +12,15 @@ class MainPage extends React.Component {
                     Picture
                 </div>
                 <div>
-                    Let me in
+                    <Link onClick={ this.props.fetchToken() }>Let me in</Link>
                 </div>
             </div>
         );
     }
 }
 
-export default MainPage;
+const mapDispatchToProps = {
+    fetchToken
+};
+  
+export default connect(null, mapDispatchToProps)(MainPage);
