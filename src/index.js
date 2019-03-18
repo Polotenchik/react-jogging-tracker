@@ -11,10 +11,11 @@ import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
 
 import reducers from './reducers/index';
-import Layout from './containers/layout';
-import Phones from './containers/phones';
-import Phone from './containers/phone';
-import Basket from './containers/basket';
+import Layout from './containers/Layout';
+import MainPage from './containers/MainPage';
+import JogsPage from './containers/JogsPage';
+import InfoPage from './containers/InfoPage';
+import ContactPage from './containers/ContactPage';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -26,11 +27,11 @@ ReactDOM.render(
     <Provider store={ store }>
         <Router history={ history }>
             <Route component={ Layout }>
-            <Route path='/' component={ Phones } />
-            <Route path='categories/:id'  component={ Phones } />
+                <Route path='/' component={ MainPage } />
+                <Route path='/jogs'  component={ JogsPage } />
+                <Route path='/info' component={ InfoPage } />
+                <Route path='/contact' component={ ContactPage } />
             </Route>
-            <Route path='phones/:id' component={ Phone } />
-            <Route path='basket' component={ Basket } />
         </Router>
     </Provider>,
     document.getElementById('root')
