@@ -1,14 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { fetchJogs } from '../action';
 
-class Jogs extends React.Component {
+class JogsPage extends React.Component {
 
-    render(){
-        return(
+    componentDidMount() {
+        this.props.fetchJogs();
+    }
+    
+    render () {
+
+        return (
             <div>
-                Jogs
+                <div>
+                    Jogs
+                </div>
+                <div>
+                        Page
+                </div>
             </div>
         );
     }
 }
 
-export default Jogs;
+// const mapStateToProps = state => ({
+//     token: state.token,
+//     isAuth: state.isAuth
+// });
+
+const mapDispatchToProps = {
+    fetchJogs
+};
+  
+export default connect(null, mapDispatchToProps)(JogsPage);

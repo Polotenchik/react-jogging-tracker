@@ -5,3 +5,9 @@ export const isAuthenticate = () => {
         !!localStorage.getItem(keyAccessToken) && !!localStorage.getItem(keyTokenType)
     );
 }
+
+export const getKeyAccess = () => {
+    return ( 
+       `${localStorage.getItem(keyTokenType)} ${localStorage.getItem(keyAccessToken)}`
+    );
+}

@@ -24,9 +24,14 @@ class MainPage extends React.Component {
         if (this.props.isAuth.isAuth) {
             return (
                 <div>
-                    Go to jogging
+                    <div>
+                    You have already register
+                    </div>
+                    <div>
+                        <Link to="/jogs">Go to jog</Link>
+                    </div>
                 </div>
-            )
+            );
         }
         return (
             <div>
@@ -34,7 +39,7 @@ class MainPage extends React.Component {
                     Picture
                 </div>
                 <div>
-                    <Link onClick={ this.handleClick }>Let me in</Link>
+                    <div onClick={ this.handleClick }>Let me in</div>
                 </div>
             </div>
         );
