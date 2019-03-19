@@ -8,3 +8,6 @@ export const requestHeaders = {
     "Accept": "application/json",
     "Content-Type": "application/x-www-form-urlencoded"
 };
+
+export const keyAccessToken = 'access_token';
+export const keyTokenType = 'token_type'; 

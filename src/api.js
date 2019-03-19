@@ -1,12 +1,12 @@
-import * as config from './constants';
+import * as constants from './constants';
 
 export const fetchToken = async () => {
     const response = await fetch(
-        config.url, 
+     constants.url, 
         { 
-            method: config.requestType,
-            body: config.requstBody, 
-            headers: config.requestHeaders 
+            method: constants.requestType,
+            body: constants.requstBody, 
+            headers: constants.requestHeaders 
         }
     );
 

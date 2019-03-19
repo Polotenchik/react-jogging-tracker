@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-// import phones from './phones';
+import token from './token';
+import auth from './auth';
 // import phonePage from './phonePage';
 // import devicePage from './devicePage';
 // import basket from './basket';
@@ -9,7 +10,8 @@ import { routerReducer } from 'react-router-redux';
 
 export default combineReducers({
     routing: routerReducer,
-    // phones,
+    token,
+    isAuth: auth,
     // phonePage,
     // devicePage,
     // basket,
