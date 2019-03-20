@@ -21,11 +21,13 @@
   "homepage": "https://github.com/Polotenchik/react-jogging-tracker#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "moment": "^2.24.0",
     "ramda": "^0.23.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "3.0.5",
+    "react-router-dom": "^5.0.0",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.0",

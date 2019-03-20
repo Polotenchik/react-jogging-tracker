@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchToken, checkAuth } from '../action';
 import { keyAccessToken, keyTokenType } from '../constants';

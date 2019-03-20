@@ -1,15 +1,27 @@
 import React from 'react';
+import moment from 'moment';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchJogs } from '../action';
 
 class JogsPage extends React.Component {
+    state = {
+        isLoading: true
+    }
 
     componentDidMount() {
         this.props.fetchJogs();
+
+
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            });
+        }, 1000);
+        
     }
 
-    renderJogItem = (item) => {
+    renderJogItem(item) {
         return (
           
                 <div key={ item.id }>
@@ -17,7 +29,7 @@ class JogsPage extends React.Component {
                         Picture
                     </div>
                     <div>
-                        <p>{ item.date }</p>
+                        <p>{ moment(new Date(item.date*1000)).format('DD.MM.YYYY') }</p>
                         <p><span>Distance:</span> { item.distance } km</p>
                         <p><span>Time:</span> { item.time } min</p>
                     </div>
@@ -26,20 +38,18 @@ class JogsPage extends React.Component {
         );
     }
 
-    render () {
+    render() {
 
-        if (!!this.props.jogs) {
+        if (this.state.isLoading) {
             return (
-                this.props.jogs.map(jog => { this.renderJogItem(jog)}) 
-            );
+                <div>Loading...</div>
+            )
         }
-
-        return (
+        
+        return ( 
             <div>
-                <div>
-                    Jogs
-                </div>
-            </div>
+               { this.props.jogs.map(jog => this.renderJogItem(jog)) }
+            </div>    
         );
     }
 }
