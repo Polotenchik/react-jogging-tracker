@@ -12,7 +12,6 @@ class JogsPage extends React.Component {
     componentDidMount() {
         this.props.fetchJogs();
 
-
         setTimeout(() => {
             this.setState({
                 isLoading: false
@@ -48,7 +47,8 @@ class JogsPage extends React.Component {
         
         return ( 
             <div>
-               { this.props.jogs.map(jog => this.renderJogItem(jog)) }
+               { this.props.jogs.slice(1,7).map(jog => this.renderJogItem(jog)) }
+               <Link to='/newJog' onClick={ this.handlerClickLink }>Create jogs</Link>
             </div>    
         );
     }

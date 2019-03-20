@@ -11,3 +11,7 @@ export const getKeyAccess = () => {
        `${localStorage.getItem(keyTokenType)} ${localStorage.getItem(keyAccessToken)}`
     );
 }
+
+export const getAddJogBody = () => {
+    return null;
+}

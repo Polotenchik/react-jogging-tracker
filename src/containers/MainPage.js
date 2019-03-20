@@ -34,9 +34,9 @@ class MainPage extends React.Component {
             );
         }
         return (
-            <div>
-                <div>
-                    Picture
+            <div className="panel-let-in">
+                <div className="image-wrapper">
+                    <img src='../icons/bear.svg' />
                 </div>
                 <div>
                     <div onClick={ this.handleClick }>Let me in</div>

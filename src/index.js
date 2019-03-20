@@ -1,4 +1,4 @@
-import './main.css'
+import './main.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,6 +16,7 @@ import MainPage from './containers/MainPage';
 import JogsPage from './containers/JogsPage';
 import InfoPage from './components/InfoPage';
 import ContactPage from './components/ContactPage';
+import CreateJogPage from './containers/CreateJogPage';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -31,6 +32,7 @@ ReactDOM.render(
                 <Route path='/jogs'  component={ JogsPage } />
                 <Route path='/info' component={ InfoPage } />
                 <Route path='/contact' component={ ContactPage } />
+                <Route path='/newJog' component={ CreateJogPage } />
             </Route>
         </Router>
     </Provider>,
