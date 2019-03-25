@@ -11,7 +11,7 @@ export const fetchToken = async () => {
     );
 
     return response.json();
-}
+};
 
 export const fetchJogs = async () => {
     const response = await fetch(
@@ -23,7 +23,7 @@ export const fetchJogs = async () => {
     );
 
     return response.json();
-}
+};
 
 export const addJog = async (data) => {
     const response = await fetch(
@@ -32,8 +32,8 @@ export const addJog = async (data) => {
             body: "date=" + data.date + "&time=" + data.time + "&distance=" + data.distance,
             method: "POST",
             headers: {
-                Accept: "application/json",
-                Authorization: localStorage.getItem("token_type") + " " + localStorage.getItem("access_token"),
+                "Accept": "application/json",
+                "Authorization": localStorage.getItem("token_type") + " " + localStorage.getItem("access_token"),
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         }
@@ -41,4 +41,4 @@ export const addJog = async (data) => {
 
     await response.ok ? alert("Saved successful") : alert("The request failed");
 
-}
+};

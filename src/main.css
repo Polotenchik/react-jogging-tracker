@@ -1,28 +1,224 @@
-.content-wrapper .panel-let-in {
-    width: 31.4375em;
-    border-radius: 2.75em;
-    background-color: #e990f9;
-    text-align: center;
-    padding-top: 4.8125em;
-    padding-bottom: 2.25em;
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
-.content-wrapper .panel-let-in .image-wrapper{
-    width: 10em;
+
+img {
+    max-width: 100%;
+}
+
+.content-wrapper {
+    max-width: 1170px;
     margin: 0 auto;
 }
-.content-wrapper .panel-let-in a {
-    font-family: SFUIText-Bold;
+
+header {
+    position: fixed;
+    z-index: 999;
+    max-width: 1170px;
+    width: 100%;
+}
+
+header .header-wrapper{
+    z-index: 9;
+}
+
+header .header-wrapper .header {
+    background: #7ed321;
+    padding: 30px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-wrapper {
+    flex: 0 0 146px;
+    display: block;
+}
+
+header .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-left: auto;
+}
+
+header .menu li {
+    display: inline-block;
+    margin: 0 24px;
+}
+
+header .menu li a {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+}
+
+.container {
+    padding: 230px 0 0 0; 
+}
+
+.panel-access {
+    width: 503px;
+    height: 379px;
+    margin: 0 auto;
+    border-radius: 44px;
+    background-color: #e990f9;
+    text-align: center;
+    padding-top: 72px;
+    padding-bottom: 36px;
+}
+
+.panel-access .image-wrapper img {
+    width: 160px;
+    margin: 0 auto;
+}
+
+div.btn-access {
+    font-family: 'Arial', sans-serif;
     line-height: 1;
     color: #fff;
     border-style: none;
     background: transparent;
-    border-radius: 2em;
-    border: 0.16em solid #fff;
+    border-radius: 32px;
+    border: 3px solid #fff;
     text-decoration: none;
     display: inline-block;
+    font-size: 18px;
+    margin-top: 50px;
+    padding: 20px 30px;
 }
-.content-wrapper .panel-let-in a {
-    font-size: 1.125em;
-    margin-top: 3.11em;
-    padding: 1.11em 1.88em;
+
+.list-jogs-wrapper .jogs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: fit-content;
+    margin: 0 auto;
 }
+
+.row-jog {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+}
+
+.list-jogs-wrapper .row-jog {
+    padding: 40px 15px;
+}
+.list-jogs-wrapper .row-jog p {
+    font-family:'Arial', sans-serif;
+    margin-bottom: 14px;
+    color: #6f6f6f;
+}
+.list-jogs-wrapper .row-jog p.date {
+    font-family: 'SFUIText-ArialRegular', sans-serif ;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.list-jogs-wrapper .row-jog p span {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.list-jogs-wrapper .row-jog .image-wrapper {
+    margin: 0 12px 0 0;
+}
+
+.content-wrapper .add-jog {
+    position: fixed;
+    z-index: 99;
+    width: 50px;
+    bottom: 40px;
+    right: 40px;
+}
+
+.panel-add-run {
+    margin: 0 auto;
+    position: relative;
+    width: 503px;
+    height: 320px;
+    border-radius: 44px;
+    background-color: #7ed321;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.panel-add-run .cancel {
+    position: absolute;
+    font-size: 16px;
+    width: 32px;
+    right: 32px;
+    top: 32px;
+}
+
+.panel-add-run form {
+    margin: 0 90px;
+}
+
+.panel-add-run form .panel-add-run-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.panel-add-run form .panel-add-run-item label {
+    text-align: left;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: semibold;
+} 
+
+.panel-add-run form .panel-add-run-item input {
+    display: block;
+    margin-left: auto;
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px 8px;
+    border: 1px solid #979797;
+}
+
+.panel-add-run form a {
+    font-family: 'Arial', sans-serif;
+    line-height: 1;
+    color: #fff;
+    border-style: none;
+    background: transparent;
+    border-radius: 32px;
+    border: 3px solid #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    margin: 24px 0;
+}
+
+.info-wrapper {
+    margin: 0 auto;
+    max-width: 45%;
+}
+
+.info-wrapper h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    color: #7ed321;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.info-wrapper p {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+} 

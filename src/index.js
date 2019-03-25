@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
 
 import reducers from './reducers/index';
-import Layout from './containers/Layout';
+import { Layout } from './containers/Layout';
 import MainPage from './containers/MainPage';
 import JogsPage from './containers/JogsPage';
 import InfoPage from './components/InfoPage';

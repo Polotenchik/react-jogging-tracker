@@ -6,9 +6,11 @@ class NavBar extends React.Component {
     render() {
         return (
             <nav>
-                <Link to="/jogs">Jogs</Link>
-                <Link to="/info">Info</Link>
-                <Link to="/contact">Contact us</Link>
+                <ul className="menu">
+                    <li><Link to="/jogs">Jogs</Link></li>
+                    <li><Link to="/info">Info</Link></li>
+                    <li><Link to="/contact">Contact us</Link></li>
+                </ul>
             </nav>
         );
     }

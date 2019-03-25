@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { fetchToken, checkAuth } from '../action';
 import { keyAccessToken, keyTokenType } from '../constants';
@@ -19,26 +19,27 @@ class MainPage extends React.Component {
         }, 1000);
     }
 
-    render () {
+    render() {
 
         if (this.props.isAuth.isAuth) {
             return (
-                <div>
-                    <div>
-                    You have already register
+                <div className="panel-access">
+                    <div className="image-wrapper">
+                        <img src='icons/icon_bear_face.svg' />
                     </div>
-                    <div>
-                        <Link to="/jogs">Go to jog</Link>
+                    <div className="btn-access">
+                        <Link to="/jogs">Go to jogs</Link>
                     </div>
                 </div>
             );
         }
+        
         return (
-            <div className="panel-let-in">
+            <div className="panel-access">
                 <div className="image-wrapper">
-                    <img src='../icons/bear.svg' />
+                    <img src='icons/icon_bear_face.svg' />
                 </div>
-                <div>
+                <div className="btn-access">
                     <div onClick={ this.handleClick }>Let me in</div>
                 </div>
             </div>

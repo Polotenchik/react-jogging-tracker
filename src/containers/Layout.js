@@ -1,17 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from './Header';
 
-const Layout = ({ children }) => (
-    <div className="col-12 content-wrapper">
-        <div className='container'>
-            <div className='row'>
-                <div className='col-md-3'>
-                    <Header />
-                    { children }
-                </div>
+export const Layout = ({ children }) => {
+    return (
+        <div className="content-wrapper">
+            <Header />
+            <div className="container">
+                { children }
             </div>
         </div>
-    </div>
-)
-
-export default Layout;
+    );
+};
