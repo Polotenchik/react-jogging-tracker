@@ -15,10 +15,13 @@ export const fetchToken = async () => {
 
 export const fetchJogs = async () => {
     const response = await fetch(
-        config.jogsUrl,
-        {   
-            method: config.jogsRequestType,
-            headers: config.jogsRequestHeaders
+        "https://jogtracker.herokuapp.com/api/v1/data/sync",
+        {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Authorization": localStorage.getItem("token_type") + " " + localStorage.getItem("access_token")
+            }
         }
     );
 
@@ -40,5 +43,4 @@ export const addJog = async (data) => {
     );
 
     await response.ok ? alert("Saved successful") : alert("The request failed");
-
 };

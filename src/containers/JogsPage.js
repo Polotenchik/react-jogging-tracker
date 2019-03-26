@@ -47,7 +47,7 @@ class JogsPage extends React.Component {
         return ( 
             <div className="list-jogs-wrapper">
                 <div className="jogs-container">
-                    { this.props.jogs.map(jog => this.renderJogItem(jog)) }
+                    { !!this.props.jogs && this.props.jogs.map(jog => this.renderJogItem(jog)) }
                 </div>
                <Link to='/newJog' className="add-jog">
                    <img src="icons/icon_add.svg"/>
