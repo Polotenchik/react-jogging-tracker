@@ -1,6 +1,6 @@
 import { FETCH_TOKEN_START, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_FAILURE,
         USER_AUTH, FETCH_JOGS_START, FETCH_JOGS_SUCCESS, FETCH_JOGS_FAILURE,
-        ADD_JOG_START, ADD_JOG_SUCCESS, ADD_JOG_FAILURE } from './actionTypes';
+        ADD_JOG_START, ADD_JOG_SUCCESS, ADD_JOG_FAILURE, TOGGLE_FILTER } from './actionTypes';
 import { fetchToken as fetchTokenApi, fetchJogs as fetchJogsApi } from './api';
 import { isAuthenticate } from './helpers';
   
@@ -46,4 +46,11 @@ export const fetchJogs = () => async dispatch => {
             error: true
       })
     }
+}
+
+export const toggleFilter = (bool) => dispatch => {
+    dispatch({
+        type: TOGGLE_FILTER,
+        payload: bool
+    })
 }
