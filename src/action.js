@@ -1,6 +1,7 @@
 import { FETCH_TOKEN_START, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_FAILURE,
         USER_AUTH, FETCH_JOGS_START, FETCH_JOGS_SUCCESS, FETCH_JOGS_FAILURE,
-        ADD_JOG_START, ADD_JOG_SUCCESS, ADD_JOG_FAILURE, TOGGLE_FILTER } from './actionTypes';
+        ADD_JOG_START, ADD_JOG_SUCCESS, ADD_JOG_FAILURE, TOGGLE_FILTER,
+        MATCH_DATE_FROM, RESET_DATE_FROM } from './actionTypes';
 import { fetchToken as fetchTokenApi, fetchJogs as fetchJogsApi } from './api';
 import { isAuthenticate } from './helpers';
   
@@ -52,5 +53,19 @@ export const toggleFilter = (bool) => dispatch => {
     dispatch({
         type: TOGGLE_FILTER,
         payload: bool
+    })
+}
+
+export const getFilterDateFrom = (date) => dispatch => {
+    dispatch({
+        type: MATCH_DATE_FROM,
+        payload: date
+    })
+}
+
+export const resetFilterDateFrom = () => dispatch => {
+    dispatch({
+        type: RESET_DATE_FROM,
+        payload: null
     })
 }

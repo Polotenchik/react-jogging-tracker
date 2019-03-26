@@ -1,53 +1,23 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 import { connect } from 'react-redux';
-//import {getDataFormFilter, changeStateFilter, checkStateFilter} from "../../actions";
+import { getFilterDateFrom, resetFilterDateFrom } from '../action';
 
 class FilterPanel extends React.Component {
 
-    // elementFilterWrapper = {};
+    checkFromDate = (e) => {
+        if (e.target.value.length === 10 && moment(e.target.value, 'DD.MM.YYYY').isValid()) {
+            this.props.getFilterDateFrom(e.target.value);
+        } else {
+            this.props.resetFilterDateFrom();
+        }
+    }
 
-    // componentWillUnmount(){
-    //     this.props.changeStateFilter(true);
-    //     this.props.checkStateFilter(false);
-    // }
-
-    // showFilterForm = () =>{
-    //     return  this.props.currentStateFilter ? {bottom: -this.elementFilterWrapper.offsetHeight} : {bottom: "0"};
-    // };
-
-    // getFilterWrapper = (node) => {
-    //     this.elementFilterWrapper = node;
-    // };
-
-    // getCorrectDate = (regexp, value) =>{
-    //     let arrayDate = regexp.exec(value);
-    //     let date = new Date(arrayDate[3], arrayDate[2] - 1, arrayDate[1]);
-    //     return date.getTime()  / 1000;
-    // };
-
-    // getFormData = (e) => {
-    //     e.preventDefault();
-    //     let regexp = new RegExp('(\\d{2})[.](\\d{2})[.](\\d{4})$');
-    //     let dateFrom = e.target.elements.date_from.value;
-    //     let dateTo = e.target.elements.date_to.value;
-    //     if ((regexp.test(dateFrom) && regexp.test(dateTo)) || (dateFrom === "" && dateTo === "")) {
-    //         let dateForm = {
-    //             dateFrom: "",
-    //             dateTo: ""
-    //         };
-    //         if (dateFrom !== "") {
-    //             dateForm = {
-    //                 dateFrom:  dateFrom,
-    //                 dateTo:  dateTo
-    //             };
-    //         }
-    //         this.props.getDataFormFilter(dateForm);
-    //     }
-    //     else{
-    //         alert("Format date: 'dd.mm.yyyy'");
-    //     }
-
-    // };
+    checkToDate = (e) => {
+        if (e.target.value.length === 10 && moment(e.target.value, 'DD.MM.YYYY').isValid()) {
+            console.log('To ok');
+        } 
+    }
 
     render() {
         return (
@@ -55,11 +25,23 @@ class FilterPanel extends React.Component {
                 <form id="filter" method="post">
                     <div className="panel-filter-item">
                         <label htmlFor="fromDate">Date from</label>
-                        <input id="fromDate" name="fromDate" type="text" placeholder="15.05.2017" />
+                        <input 
+                            id="fromDate" 
+                            name="fromDate" 
+                            type="text" 
+                            placeholder="15.05.2017"
+                            onChange={ this.checkFromDate }
+                        />
                     </div>
                     <div className="panel-filter-item">
                         <label htmlFor="toDate">Time</label>
-                        <input id="toDate" name="toDate" type="text" placeholder="15.05.2019" />
+                        <input 
+                            id="toDate" 
+                            name="toDate" 
+                            type="text" 
+                            placeholder="15.05.2019"
+                            onChange={ this.checkToDate } 
+                        />
                     </div>               
                 </form>
              </div>
@@ -67,19 +49,9 @@ class FilterPanel extends React.Component {
     }
 }
 
-// function mapStateToProps(state) {
-//     return {
-//         currentStateFilter: state.filter.stateFilter,
-//         dataForm: state.filter.dataForm
-//     };
-// }
-
-// function matchDispatchToProps(dispatch){
-//     return bindActionCreators({
-//         getDataFormFilter: getDataFormFilter,
-//         checkStateFilter: checkStateFilter,
-//         changeStateFilter: changeStateFilter
-//     }, dispatch)
-// }
-
-export default connect(null, null)(FilterPanel);
+const mapDispatchToProps = {
+    getFilterDateFrom,
+    resetFilterDateFrom
+};
+  
+export default connect(null, mapDispatchToProps)(FilterPanel);
