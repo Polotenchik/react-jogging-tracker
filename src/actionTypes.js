@@ -12,3 +12,8 @@ export const FETCH_JOGS_FAILURE = 'FETCH_JOGS_FAILURE';
 
 export const MATCH_DATE_FROM = 'MATCH_DATE_FROM';
 export const RESET_DATE_FROM = 'RESET_DATE_FROM';
+
+export const MATCH_DATE_TO = 'MATCH_DATE_TO';
+export const RESET_DATE_TO = 'RESET_DATE_TO';
+
+export const SET_DEFAULT_DATES = 'SET_DEFAULT_DATES';

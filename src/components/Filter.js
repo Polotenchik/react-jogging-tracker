@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleFilter } from '../action';
+import { toggleFilter, resetFilterDates } from '../action';
 
 class Filter extends React.Component {
 
@@ -12,7 +12,8 @@ class Filter extends React.Component {
         this.props.toggleFilter(this.state.active);  
         this.setState({
             active: !this.state.active,
-        });       
+        });
+        this.props.resetFilterDates();
     }
 
     render() {
@@ -29,7 +30,8 @@ class Filter extends React.Component {
 }
 
 const mapDispatchToProps = {
-    toggleFilter
+    toggleFilter,
+    resetFilterDates
 };
   
 export default connect(null, mapDispatchToProps)(Filter);

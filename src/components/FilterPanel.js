@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { getFilterDateFrom, resetFilterDateFrom } from '../action';
+import { getFilterDateFrom, resetFilterDateFrom, getFilterDateTo, resetFilterDateTo } from '../action';
 
 class FilterPanel extends React.Component {
 
@@ -15,8 +15,10 @@ class FilterPanel extends React.Component {
 
     checkToDate = (e) => {
         if (e.target.value.length === 10 && moment(e.target.value, 'DD.MM.YYYY').isValid()) {
-            console.log('To ok');
-        } 
+            this.props.getFilterDateTo(e.target.value);
+        } else {
+            this.props.resetFilterDateTo();
+        }
     }
 
     render() {
@@ -34,7 +36,7 @@ class FilterPanel extends React.Component {
                         />
                     </div>
                     <div className="panel-filter-item">
-                        <label htmlFor="toDate">Time</label>
+                        <label htmlFor="toDate">Date to</label>
                         <input 
                             id="toDate" 
                             name="toDate" 
@@ -51,7 +53,9 @@ class FilterPanel extends React.Component {
 
 const mapDispatchToProps = {
     getFilterDateFrom,
-    resetFilterDateFrom
+    resetFilterDateFrom,
+    getFilterDateTo,
+    resetFilterDateTo
 };
   
 export default connect(null, mapDispatchToProps)(FilterPanel);

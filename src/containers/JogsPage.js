@@ -43,6 +43,37 @@ class JogsPage extends React.Component {
                 <div>Loading...</div>
             );
         }
+    
+        if (this.props.dateFrom && this.props.dateTo) {
+            return (
+                <div className="list-jogs-wrapper">
+                { this.props.jogs.filter(jog =>
+                    moment(moment(new Date(jog.date * 1000)).format('DD.MM.YYYY')).isBetween((moment(this.props.dateFrom, 'DD.MM.YYYY')), moment(this.props.dateTo, 'DD.MM.YYYY')))
+                    .map(jog => this.renderJogItem(jog)) }
+                </div>
+            )
+        }
+
+        if (this.props.dateFrom) {
+            return (
+                <div className="list-jogs-wrapper">
+                    { this.props.jogs.filter(jog =>
+                        moment(moment(new Date(jog.date * 1000)).format('DD.MM.YYYY')).isAfter(moment(this.props.dateFrom, 'DD.MM.YYYY')))
+                        .map(jog => this.renderJogItem(jog)) }
+                </div>
+            );
+        }
+
+        if (this.props.dateTo) {
+            return (
+                <div className="list-jogs-wrapper">
+                    { this.props.jogs.filter(jog =>
+                        moment(moment(new Date(jog.date * 1000)).format('DD.MM.YYYY')).isBefore(moment(this.props.dateTo, 'DD.MM.YYYY')))
+                        .map(jog => this.renderJogItem(jog)) }
+                </div>
+            );
+        }
+
         
         return ( 
             <div className="list-jogs-wrapper">
@@ -59,6 +90,9 @@ class JogsPage extends React.Component {
 
 const mapStateToProps = state => ({
     jogs: state.jogs.jogs,
+    isFilterOn: state.isFilterOn.isFilterOn,
+    dateFrom: state.isFilterOn.dateFrom,
+    dateTo: state.isFilterOn.dateTo,
 });
 
 const mapDispatchToProps = {

@@ -1,7 +1,7 @@
 import { FETCH_TOKEN_START, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_FAILURE,
         USER_AUTH, FETCH_JOGS_START, FETCH_JOGS_SUCCESS, FETCH_JOGS_FAILURE,
         ADD_JOG_START, ADD_JOG_SUCCESS, ADD_JOG_FAILURE, TOGGLE_FILTER,
-        MATCH_DATE_FROM, RESET_DATE_FROM } from './actionTypes';
+        MATCH_DATE_FROM, RESET_DATE_FROM, MATCH_DATE_TO, RESET_DATE_TO, SET_DEFAULT_DATES } from './actionTypes';
 import { fetchToken as fetchTokenApi, fetchJogs as fetchJogsApi } from './api';
 import { isAuthenticate } from './helpers';
   
@@ -66,6 +66,27 @@ export const getFilterDateFrom = (date) => dispatch => {
 export const resetFilterDateFrom = () => dispatch => {
     dispatch({
         type: RESET_DATE_FROM,
+        payload: null
+    })
+}
+
+export const getFilterDateTo = (date) => dispatch => {
+    dispatch({
+        type: MATCH_DATE_TO,
+        payload: date
+    })
+}
+
+export const resetFilterDateTo = () => dispatch => {
+    dispatch({
+        type: RESET_DATE_TO,
+        payload: null
+    })
+}
+
+export const resetFilterDates = () => dispatch => {
+    dispatch({
+        type: SET_DEFAULT_DATES,
         payload: null
     })
 }
