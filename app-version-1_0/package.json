@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Polotenchik/react-jogging-tracker#readme",
   "dependencies": {
     "classnames": "^2.2.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ramda": "^0.23.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
